@@ -2,26 +2,34 @@
 
 from helpers import (
     exit_program,
-    helper_1
+    author_data, 
+    initalization,
+    book_data
 )
 
 
 def main():
+    initalization()
+
     while True:
         menu()
-        choice = input("> ")
-        if choice == "0":
+        choice = input("Select an option from the menu: ")
+        if (choice == "1"):
+            author_data()
+        elif choice == "2":
+            book_data()
+        elif(choice == "0"):
             exit_program()
-        elif choice == "1":
-            helper_1()
         else:
-            print("Invalid choice")
+            print("Invalid option! Please choose from menu!\n")
 
 
 def menu():
-    print("Please select an option:")
-    print("0. Exit the program")
-    print("1. Some useful function")
+    print("\nWelcome to Library Database!\n")
+    print("Main Menu:")
+    print("1: Access the Author data")
+    print("2: Access the Book data")
+    print("0: Exit the Library\n")
 
 
 if __name__ == "__main__":
