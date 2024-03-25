@@ -42,7 +42,7 @@ def author_data():
 
 
 def author_menu():
-    print("\n Author Menu:")
+    print("\nAuthor Menu:")
     print("1: Create New Author")
     print("2: Retrieve Author Data")
     print("3: Update an Author")
@@ -108,7 +108,7 @@ def get_author():
 
 
 def get_author_menu():
-    print("\n Would you like to get all authors or just one?")
+    print("\nWould you like to get all authors or just one?")
     print("1: Get All Authors")
     print("2: Get One Author By ID")
     print("3: Get One Author By Last Name")

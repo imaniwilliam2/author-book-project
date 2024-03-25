@@ -18,7 +18,7 @@ class Author:
         if(isinstance(first_name_parameter, str)) and (len(first_name_parameter) > 4):
             self._first_name = first_name_parameter
         else:
-            raise ValueError("Name must be a string greater than 4 characters!")
+            raise ValueError("First Name must be a string greater than 4 characters!")
         
 
     @property
@@ -30,7 +30,7 @@ class Author:
         if(isinstance(last_name_parameter, str)) and (len(last_name_parameter) > 4):
             self._last_name = last_name_parameter
         else:
-            raise ValueError("Name must be a string greater than 4 characters!")
+            raise ValueError("Last Name must be a string greater than 4 characters!")
         
     def __repr__(self):
         return f"<Author #{self.id}| First Name: {self.first_name}, Last Name: {self.last_name} >"

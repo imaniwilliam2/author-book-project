@@ -11,11 +11,11 @@ if __name__ == "__main__":
     CURSOR.execute("DELETE FROM books")
     CONN.commit()
 
-    Author.create("Sarah", "Maas")
+    Author.create("Sarah", "J. Maas")
     Author.create("James", "Patterson")
     Author.create("Natasha", "Preston")
 
-    # Book.create("ACOTAR", author1, 5, 1)
-    # Book.create("Humans Bow", author2, 3, 2)
-    # Book.create("The Cellar", author3, 5, 3)
+    Book.create("ACOTAR", "Sarah Maas", 5, 1)
+    Book.create("Humans Bow", "James Patterson", 3, 2)
+    Book.create("The Cellar", "Natasha Preston", 5, 3)
     

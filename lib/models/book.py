@@ -30,10 +30,10 @@ class Book:
 
         from models.author import Author
 
-        if(isinstance(author_parameter, Author)):
+        if(isinstance(author_parameter, str)) and (5 <= len(author_parameter) <= 50):
             self._author = author_parameter
         else:
-            raise ValueError("Author must be an instance of the Author class!")
+            raise ValueError("Author must be a string between 5 and 50 characters!")
         
     @property
     def rating(self):

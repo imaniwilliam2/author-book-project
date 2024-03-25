@@ -25,7 +25,7 @@ def main():
 
 
 def menu():
-    print("\nWelcome to Library Database!\n")
+    print("\nWelcome to the Library Database!\n")
     print("Main Menu:")
     print("1: Access the Author data")
     print("2: Access the Book data")
