@@ -6,10 +6,16 @@ Do you love books? Okay... Do you love finding more of that authors work? Or see
 
 ## Set-Up
 
-To access the Literary Locator, install the packages and enter the shell the commands below.
+To access the Literary Locator, install the packages and enter pipenv shell with the commands below.
 
 ```
 pipenv install
 pipenv shell
+```
+
+Once all packages have been installed and you have entered the viurtal environment in your terminal run the file to start the CLI application.
+
+```
+python lib/cli.py
 ```
 ---
