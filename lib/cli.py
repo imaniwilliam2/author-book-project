@@ -30,7 +30,7 @@ def main():
 
 
 def menu():
-    print("\nWelcome to the Library Database!\n")
+    print("\nWelcome to the Literary Locator Database!\n")
     print("Main Menu:")
     print("1: Access Author Data")
     print("2: Access Book Data")

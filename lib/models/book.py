@@ -16,10 +16,10 @@ class Book:
     
     @title.setter
     def title(self, title_parameter):
-        if(isinstance(title_parameter, str)) and (len(title_parameter) > 3):
+        if(isinstance(title_parameter, str)):
             self._title = title_parameter
         else:
-            raise ValueError("Title must be a string greater than 3characters!")
+            raise ValueError("Title must be a string!")
         
     @property
     def author(self):
@@ -175,7 +175,7 @@ class Book:
 
         if self in Book.all:
             Book.all.remove(self)
-            
+
     def authors(self):
         from models.author import Author
 
