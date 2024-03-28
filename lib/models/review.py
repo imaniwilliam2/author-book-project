@@ -198,3 +198,21 @@ class Review:
         CONN.commit()
 
         Review.all = [review for review in Review.all if review.id != self.id]
+
+    def book(self):
+
+        from models.book import Book
+
+        sql = """
+            SELECT *
+            FROM books
+            INNER JOIN reviews
+            ON books.id = reviews.book_id
+            WHERE reviews.book_id = ? 
+        """
+        row = CURSOR.execute(sql, (self.id,)).fetchone()
+
+        if row:
+            return Book.instance_from_db(row)
+        else:
+            return None

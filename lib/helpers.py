@@ -490,6 +490,8 @@ def review_data():
         elif(choice == "4"):
             delete_review()
             break
+        elif(choice == "5"):
+            reviews_book()
         elif(choice == "0"):
             break
         else:
@@ -503,6 +505,7 @@ def review_menu():
     print("2: Add A Review")
     print("3: Update a Review")
     print("4: Delete a Review")
+    print("5: Get Book the Review Belongs To")
     print("0: Back to Main Menu\n")
 
 def get_review_menu():
@@ -651,4 +654,27 @@ def delete_review():
             print("\nInvalid input! Try Again!")
 
 
-
+def reviews_book():
+    while(True):
+        try:
+            choice = input("\nEnter an ID to get the Book of Review: ")
+            choice = int(choice)
+            review = Review.find_by_id(choice)
+            if(review):
+                print(f"\nHere is the Book referred to in Review #{review.id}:")
+                print(review.book())
+                choice = input("\n Press 'return' to continue...")
+                break
+            else:
+                print("\nReview Not Found!")
+                choice = input("Would you like to try again? Y/N: ")
+                if(choice == 'N'):
+                    break
+                elif(choice == 'Y'):
+                    None
+                else:
+                    print("\nInvalid input! Try Again")
+        except:
+            print("\nInvalid input! Try Again!")
+            choice = input("\n Press 'return' to continue...")
+            break
