@@ -158,3 +158,16 @@ class Author:
         rows = CURSOR.execute(sql, (self.id,)).fetchall()
 
         return [Book.instance_from_db(row).title for row in rows]
+    
+    def author_reviews(self):
+        from models.review import Review
+
+        sql = """
+            SELECT reviews.*
+            FROM reviews
+            JOIN books ON reviews.book_id = books.id
+            WHERE books.author_id = ? 
+        """
+        rows = CURSOR.execute(sql, (self.id,)).fetchall()
+
+        return [Review.instance_from_db(row) for row in rows]

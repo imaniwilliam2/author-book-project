@@ -36,12 +36,14 @@ def author_data():
         elif(choice == "5"):
             get_author_books()
             break
+        elif(choice == "6"):
+            get_all_reviews_author()
         elif(choice == "0"):
             break
         else:
             print("Invalid option! Please select from menu.\n")
 
-
+1
 
 
 def author_menu():
@@ -51,6 +53,7 @@ def author_menu():
     print("3: Update an Author")
     print("4: Delete an Author")
     print("5: Retrieve an Author's books")
+    print("6: Get all Reviews Associated with Author")
     print("0: Back to Main Menu\n")
 
 def create_author():
@@ -255,7 +258,31 @@ def book_data():
         else:
             print("\nInvaild option! Please select from menu.")
 
-        
+    
+def get_all_reviews_author():
+    while(True):
+        try:
+            choice = input("\nEnter an Author ID to get the Reviews of Author: ")
+            choice = int(choice)
+            author = Author.find_by_id(choice)
+            if(author):
+                print(f"\nHere is the Reviews for Author #{author.id}:")
+                print(f"\n{author.author_reviews()}")
+                choice = input("\n Press 'return' to continue...")
+                break
+            else:
+                print("\nAuthor Not Found!")
+                choice = input("Would you like to try again? Y/N: ")
+                if(choice == 'N'):
+                    break
+                elif(choice == 'Y'):
+                    None
+                else:
+                    print("\nInvalid input! Try Again")
+        except Exception as e:
+            print("\nInvalid input! Try Again:", e)
+            choice = input("\n Press 'return' to continue...")
+
 
 def book_menu():
     print("\nBook Menu:")

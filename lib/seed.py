@@ -17,6 +17,8 @@ if __name__ == "__main__":
     Author.create("Sarah", "J. Maas")
     Author.create("James", "Patterson")
     Author.create("Natasha", "Preston")
+    Author.create("Tia", "Williams")
+
 
     Book.create("ACOTAR", "Sarah Maas", "Fantasy", 1)
     Book.create("ACOMAF", "Sarah Maas", "Fantasy", 1)
@@ -30,5 +32,8 @@ if __name__ == "__main__":
     Review.create("The Cellar", 5, "This book left me with goosebumps!", 5)
     Review.create("ACOMAF", 5, "Must read fantasy book!", 2)
     Review.create("ACOMAF", 5, "I need the next book!", 2)
+    Review.create("Humans Bow", 2, "Kinda lame!", 4)
+
+
     
     
