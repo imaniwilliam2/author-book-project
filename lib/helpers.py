@@ -505,11 +505,11 @@ def review_menu():
     print("2: Add A Review")
     print("3: Update a Review")
     print("4: Delete a Review")
-    print("5: Get Book the Review Belongs To")
+    print("5: Get the Book referred to in Review")
     print("0: Back to Main Menu\n")
 
 def get_review_menu():
-    print("\nWould you like to get all the Books or just one?")
+    print("\nWould you like to get all the Reviews or just one?")
     print("1: Get All Reviews")
     print("2: Get Review By ID")
     print("3: Get Review By Rating")
@@ -575,7 +575,7 @@ def get_review():
 
             break
         elif(choice == "0"):
-            book_menu()
+            review_menu()
             choice = input("Select an option from the menu: ")
             break
         else:
