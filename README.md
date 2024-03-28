@@ -13,9 +13,12 @@ pipenv install
 pipenv shell
 ```
 
-Once all packages have been installed and you have entered the viurtal environment in your terminal run the file to start the CLI application.
+Once all packages have been installed and you have entered the viurtal environment, in your terminal, run the file to start the CLI application.
 
 ```
 python lib/cli.py
 ```
+
+Finally, once the application is up and running, you can then browser/interact with the database. Choose and input from the respective menu as well as enter answers to prompts when needed.
+
 ---
