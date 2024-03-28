@@ -4,7 +4,8 @@ from helpers import (
     exit_program,
     author_data, 
     initalization,
-    book_data
+    book_data,
+    review_data
 )
 
 
@@ -20,15 +21,20 @@ def main():
             book_data()
         elif(choice == "0"):
             exit_program()
+        elif(choice == "3"):
+            review_data()
         else:
-            print("Invalid option! Please choose from menu!\n")
+            print("\nInvalid option! Please select from menu!")
+            choice = input("\nPress 'return' to continue...")
+
 
 
 def menu():
     print("\nWelcome to the Library Database!\n")
     print("Main Menu:")
-    print("1: Access the Author data")
-    print("2: Access the Book data")
+    print("1: Access Author Data")
+    print("2: Access Book Data")
+    print("3: Access Review Data")
     print("0: Exit the Library\n")
 
 

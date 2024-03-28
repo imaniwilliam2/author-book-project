@@ -4,6 +4,7 @@ class Author:
 
     all = []
 
+
     def __init__(self, first_name, last_name):
         self.first_name = first_name
         self.last_name = last_name
@@ -15,10 +16,10 @@ class Author:
     
     @first_name.setter
     def first_name(self, first_name_parameter):
-        if(isinstance(first_name_parameter, str)) and (len(first_name_parameter) > 4):
+        if(isinstance(first_name_parameter, str)) and (len(first_name_parameter) >= 3):
             self._first_name = first_name_parameter
         else:
-            raise ValueError("First Name must be a string greater than 4 characters!")
+            raise ValueError("First Name must be a string greater than or equal to 3 characters!")
         
 
     @property
@@ -27,10 +28,10 @@ class Author:
     
     @last_name.setter
     def last_name(self, last_name_parameter):
-        if(isinstance(last_name_parameter, str)) and (len(last_name_parameter) > 4):
+        if(isinstance(last_name_parameter, str)) and (len(last_name_parameter) >= 3):
             self._last_name = last_name_parameter
         else:
-            raise ValueError("Last Name must be a string greater than 4 characters!")
+            raise ValueError("Last Name must be a string greater than or equal to 3 characters!")
         
     def __repr__(self):
         return f"<Author #{self.id}| First Name: {self.first_name}, Last Name: {self.last_name} >"
@@ -156,4 +157,4 @@ class Author:
 
         rows = CURSOR.execute(sql, (self.id,)).fetchall()
 
-        return [Book.instance_from_db(row) for row in rows]
+        return [Book.instance_from_db(row).title for row in rows]
